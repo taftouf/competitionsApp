@@ -1,0 +1,139 @@
+@import '../../../../assets/styles/includes/vars';
+@import '../../../../assets/styles/includes/mixins';
+
+.aside {
+    max-width: 320px;
+    width: 100%;
+    flex-shrink: 0;
+    background-color: $blackLight;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include customScroll;
+    padding: 20px 8px;
+
+    @media (max-width: 768px) {
+        max-width: unset;
+    }
+}
+
+.asideTitle {
+    padding: 0 10px;
+    margin-bottom: 30px;
+}
+
+.asideItem {
+    & + & {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid $white;
+    }
+}
+
+.asideLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background-color: $blackLighter;
+    border-radius: 7px;
+    box-shadow: $shadow;
+    padding: 10px 20px;
+    transition: all .15s;
+
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: $white;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    &:hover {
+        background-color: $btnBG;
+    }
+}
+
+.asideLinkActive {
+    background-color: $btnBG;
+}
+
+.asideSubtitle {
+    margin-bottom: 10px;
+}
+
+.asideList {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include customScroll;
+    padding: 8px;
+    margin-left: -8px;
+    margin-bottom: 20px;
+    width: calc(100% + 16px);
+}
+
+.asideImg {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.asideListItem {
+    & + & {
+        margin-top: 10px;
+    }
+}
+
+.asideAdd {
+    color: $redDark;
+    background-color: $primary;
+    padding: 10px 20px;
+    border-radius: 7px;
+    transition: all .15s;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    box-shadow: $shadow;
+
+    &:hover {
+        color: $primary;
+        background-color: $redDark;
+    }
+}
+
+.asideSearchWrap {
+    position: relative;
+    padding: 0;
+    background-color: unset;
+}
+
+.asideSearchBtn {
+    width: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    @include centerFlex;
+    left: 10px;
+    width: initial;
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: $white;
+    }
+}
+
+.asideSearch {
+    width: 100%;
+    background-color: $btnBG;
+    border-radius: 7px;
+    padding: 13px 15px 13px 45px;
+    text-align: left;
+    color: $primary;
+
+    &::placeholder {
+        color: rgba($primary, .5);
+    }
+}

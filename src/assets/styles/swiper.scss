@@ -1,0 +1,36 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+%swiper-button {
+    width: 20px;
+    height: 100%;
+    @include bg;
+    background-image: url(../images/arrow.svg);
+    background-size: 8px 15px;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    z-index: 10;
+    transition: all .15s;
+    background-color: $blackLight;
+
+    &:hover {
+        background-color: $blackLighter;
+    }
+}
+
+.swiper-button-prev {
+    @extend %swiper-button;
+    left: 0;
+}
+
+.swiper-button-next {
+    @extend %swiper-button;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.swiper-button-disabled {
+    pointer-events: none;
+    opacity: .5;
+}

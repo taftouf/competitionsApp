@@ -1,0 +1,13 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.error {
+    @include centerFlex;
+    width: 100%;
+    font-size: 48px;
+    flex-direction: column;
+
+    span {
+        color: $secondary;
+    }
+}

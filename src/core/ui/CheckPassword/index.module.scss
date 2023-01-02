@@ -1,0 +1,24 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.validation{
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    margin: 1px;
+  }
+  
+  .validationItem {
+    margin: 1px;
+    color: #F2180A;
+    font-size: small;
+  }
+  
+  .validator {
+    display: flex;
+  }
+  
+  .valideSuccess {
+    color: #11AF41;
+  }
+  

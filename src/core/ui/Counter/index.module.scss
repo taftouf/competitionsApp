@@ -1,0 +1,39 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.counter {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.counterBtn {
+    padding: 5px 10px;
+    transition: all .15s;
+    font-weight: 400;
+
+    &:hover {
+        background-color: $blackLight;
+    }
+}
+
+.counterInp {
+    border-bottom: 1px solid transparent;
+    padding: 5px;
+    max-width: 40px;
+    text-align: center;
+
+    &:hover, &:focus {
+        border-color: $primary;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+}

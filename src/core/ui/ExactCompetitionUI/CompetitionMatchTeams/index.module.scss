@@ -1,0 +1,111 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.teams {
+    padding: 60px 15px;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+}
+
+.teamsContent {
+    max-width: 1080px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: $blackLight;
+}
+
+.teamsTabsWrap {
+    background-color: $blackLighter;
+
+    @media (max-width: 768px) {
+        overflow-y: hidden;
+        overflow-x: auto;
+        @include customScroll;
+        padding-bottom: 3px;
+
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
+}
+
+.teamsInner {
+    padding: 50px 40px;
+
+    @media (max-width: 768px) {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        @include customScroll;
+        padding: 40px 15px;
+
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+    }
+}
+
+.teamsItem {
+    @include listItem;
+
+    @media (max-width: 768px) {
+        min-width: max-content;
+    }
+}
+
+.tabsImg {
+    @include circleImg;
+    margin-right: 15px;
+}
+
+.teamsBox {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 15px;
+}
+
+.matchTop {
+    position: relative;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+        .matchArrowLink {
+            font-size: 0;
+
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+.matchArrowLink {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    @include centerFlex;
+    border-radius: 50%;
+    position: absolute;
+    top: 24%;
+    cursor: pointer;
+    border: 1px solid #666;
+    background-color: #666;
+    color: #fff;
+    border-radius: 50%;
+
+    &:hover{
+        background-color: #575757;
+    }
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: $primary;
+        transform: rotate(180deg);
+    }
+}

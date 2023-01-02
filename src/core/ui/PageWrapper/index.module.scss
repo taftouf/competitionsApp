@@ -1,0 +1,27 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.pageWrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg;
+
+    @media (max-width: 500px) {
+        padding-top: $headerMobileHeight;
+    }
+}
+
+.pageWrapperLightBG {
+    background-color: $authBG;
+
+    @media (max-width: 500px) {
+        padding-top: 0;
+    }
+}
+
+.pageWrapperContent {
+    flex-grow: 1;
+    display: flex;
+}

@@ -1,0 +1,83 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.container {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.inputWrapper {
+    width: 100%;
+    position: relative;
+
+    & + & {
+        margin-top: 15px;
+    }
+}
+
+.inputWrapperError {
+    .input, .inputTextarea {
+        border-color: $secondary;
+    }
+}
+
+.input {
+    width: 100%;
+    background-color: $white;
+    color: $black;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid transparent;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+}
+
+.inputDisabled {
+    pointer-events: none;
+}
+
+.inputError {
+    position: absolute;
+    left: 15px;
+    top: 2px;
+    color: $secondary;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.radius {
+    border-radius: 10px 0 0 10px;
+}
+
+.containerEyeIcon {
+    background-color: $white;
+    border-radius: 0 10px 10px 0;
+    padding: 13px 13px 0 13px;
+    border: none;
+
+    .eyeIcon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        fill: none;
+        stroke: $black;
+    }
+}
+
+.containerEyeIconDark {
+    background-color: $blackLighter;
+
+    .eyeIcon {
+        stroke: $primary;
+    }
+}

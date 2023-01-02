@@ -1,0 +1,157 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.loaderWrap {
+    @include centerFlex;
+}
+
+.loaderWrapHome{
+    padding: 20px 0;
+}
+
+.loaderLogin{
+    width: 19px;
+    height: 19px;
+}
+
+.loaderHome{
+    width: 30px;
+    height: 30px;
+}
+
+.loader {
+    --duration: 2s;
+    position: relative;
+    display: inline-block;
+
+    & + & {
+        margin-left: 13px;
+    }
+
+    &::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        background: $secondary;
+        top: 37px;
+        left: 19px;
+        transform: translate(-14px, -25px);
+        animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    }
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        rect,
+        polygon,
+        circle {
+            fill: none;
+            stroke: $primary;
+            stroke-width: 10px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+
+        polygon {
+            stroke-dasharray: 145 (221 - 145) 145 (221 - 145);
+            stroke-dashoffset: 0;
+            animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+        }
+
+        rect {
+            stroke-dasharray: (256 / 4 * 3) (256 / 4) (256 / 4 * 3) (256 / 4);
+            stroke-dashoffset: 0;
+            animation: pathRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+        }
+
+        circle {
+            stroke-dasharray: (200 / 4 * 3) (200 / 4) (200 / 4 * 3) (200 / 4);
+            stroke-dashoffset: 75;
+            animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+        }
+    }
+
+    &.loaderTriangle {
+        width: 48px;
+
+        &::before {
+            left: 21px;
+            transform: translate(-7px, -24px);
+            animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+        }
+    }
+
+    @keyframes pathTriangle {
+        33% {
+            stroke-dashoffset: 74;
+        }
+        66% {
+            stroke-dashoffset: 147;
+        }
+        100% {
+            stroke-dashoffset: 221;
+        }
+    }
+
+    @keyframes dotTriangle {
+        33% {
+            transform: translate(0, -12px);
+        }
+        66% {
+            transform: translate(7px, -24px);
+        }
+        100% {
+            transform: translate(-7px, -24px);
+        }
+    }
+
+    @keyframes pathRect {
+        25% {
+            stroke-dashoffset: 64;
+        }
+        50% {
+            stroke-dashoffset: 128;
+        }
+        75% {
+            stroke-dashoffset: 192;
+        }
+        100% {
+            stroke-dashoffset: 256;
+        }
+    }
+
+    @keyframes dotRect {
+        25% {
+            transform: translate(-7px, -13px);
+        }
+        50% {
+            transform: translate(3px, -25px);
+        }
+        75% {
+            transform: translate(-7px, -37px);
+        }
+        100% {
+            transform: translate(-14px, -25px);
+        }
+    }
+
+    @keyframes pathCircle {
+        25% {
+            stroke-dashoffset: 125;
+        }
+        50% {
+            stroke-dashoffset: 175;
+        }
+        75% {
+            stroke-dashoffset: 225;
+        }
+        100% {
+            stroke-dashoffset: 275;
+        }
+    }
+}

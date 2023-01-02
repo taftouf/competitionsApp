@@ -1,0 +1,338 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.menuInfo {
+    max-width: 300px;
+    width: 100%;
+    margin-right: 15px;
+    flex-shrink: 0;
+    position: relative;
+
+    @media (max-width: 1024px) {
+        max-width: 250px;
+    }
+
+    @media (max-width: 768px) {
+        max-width: unset;
+        margin-right: 0;
+        margin-bottom: 15px;
+        display: flex;
+    }
+}
+
+.menuInfoItem {
+    border-radius: 7px;
+    box-shadow: $shadow;
+    font-weight: 400;
+    background-color: $blackLight;
+    transition: all .15s;
+
+    &:hover {
+        background-color: $secondary;
+
+        @media (max-width: 768px) {
+            background-color: $blackLighter;
+        }
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: $primary;
+        flex-shrink: 0;
+        margin-right: 20px;
+
+        @media (max-width: 768px) {
+            margin: 0;
+        }
+    }
+
+    & + & {
+        margin-top: 25px;
+
+        @media (max-width: 768px) {
+            margin-top: 0;
+            margin-left: 25px;
+        }
+
+        @media (max-width: 500px) {
+            margin-left: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-grow: 1;
+    }
+}
+
+.menuInfoItemStandard {
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+        font-size: 0;
+    }
+}
+
+.menuInfoItemActive {
+    background-color: $secondary;
+
+    @media (max-width: 768px) {
+        background-color: $blackLighter;
+        position: relative;
+        border-radius: 7px 7px 0 0;
+        z-index: 3;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            background-color: $blackLighter;
+            width: 100%;
+            height: 20px;
+            z-index: -1;
+        }
+    }
+}
+
+.menuInfoItemWithContent {
+    background-color: $secondary;
+    flex-direction: column;
+    cursor: default;
+
+    @media (max-width: 768px) {
+        position: static;
+        background-color: $blackLighter;
+
+        &::after {
+            display: none;
+        }
+
+        .menuInfoItemBtn {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                background-color: $blackLighter;
+                width: 100%;
+                height: 20px;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+.menuInfoItemBtn {
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: 768px) {
+        font-size: 0;
+        justify-content: center;
+    }
+}
+
+.menuInfoItemContent {
+    padding: 20px;
+    background-color: $blackLight;
+    width: 100%;
+    border-radius: 0 0 7px 7px;
+
+    @media (max-width: 768px) {
+        position: absolute;
+        width: calc(100% + 30px);
+        left: -15px;
+        top: calc(100% + 15px);
+        border-radius: 0;
+        border-bottom: 1px solid $btnBG;
+    }
+}
+
+.menuInfoItemContentLight {
+    @media (max-width: 768px) {
+        background-color: $blackLighter;
+    }
+}
+
+.menuInfoItemContentTitle {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+        text-align: center;
+        margin-top: -20px;
+        margin-left: -20px;
+        width: calc(100% + 40px);
+        padding: 15px 20px;
+        background-color: $blackLighter;
+        margin-bottom: 30px;
+    }
+}
+
+.menuInfoMoreItem {
+    font-size: 14px;
+    font-weight: 500;
+
+    span {
+        font-weight: 400;
+        display: block;
+        margin-top: 15px;
+    }
+
+    & + & {
+        margin-top: 25px;
+    }
+}
+
+.menuInfoMoreItemFlex {
+    display: flex;
+
+    span {
+        margin-top: 0;
+        margin-left: 10px;
+    }
+}
+
+.menuInfoItemSubtitle {
+    font-weight: 600;
+}
+
+.menuInfoMoreSocials {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.menuInfoMoreSocialsItem {
+
+}
+
+.menuInfoMoreSocialsLink {
+    padding: 8px;
+    @include centerFlex;
+    transition: all .15s;
+
+    &:hover {
+        filter: brightness(.8);
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+    }
+}
+
+.menuInfoBadgeCategory {
+    & + & {
+        margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+}
+
+.menuInfoBadgeCategoryName {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.menuInfoBadgeCategoryList {
+    display: grid;
+    width: 100%;
+    max-width: 250px;
+    grid-template-columns: repeat(3, 60px);
+    grid-gap: 15px 15px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, 60px);
+        max-width: unset;
+        justify-items: center;
+    }
+}
+
+.menuInfoBadgeCategoryListItem {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $btnBG;
+    @include centerFlex;
+    flex-direction: column;
+    font-size: 12px;
+
+    span {
+        margin-top: 5px;
+        word-break: break-all;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    animation: showBadge .1s forwards;
+
+    @keyframes showBadge {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
+.menuInfoBadgeCategoryListItemActive {
+    background: linear-gradient(-30deg, #66482c 0%, #ab7546 100%);
+}
+
+.menuInfoItemArrow {
+    width: 100%;
+    border-radius: 7px;
+    background-color: $btnBG;
+    height: 24px;
+    @include centerFlex;
+    transition: all .15s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $secondary;
+    }
+
+    svg {
+        width: 10px;
+        height: 10px;
+        margin: 0;
+    }
+}
+
+.menuInfoItemArrowUp {
+    margin-bottom: 20px;
+
+    svg {
+        transform: rotate(-90deg);
+    }
+}
+
+.menuInfoItemArrowDown {
+    margin-top: 20px;
+
+    svg {
+        transform: rotate(90deg);
+    }
+}

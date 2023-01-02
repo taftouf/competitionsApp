@@ -1,0 +1,428 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.match {
+    padding-top: 10px;
+}
+
+.matchWrap {
+    padding: 15px;
+}
+
+.matchTop {
+    position: relative;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+        .matchArrowLink {
+            font-size: 0;
+
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+.matchArrowLink {
+    @include arrowBtn;
+}
+
+.matchArrowLinkNext {
+    svg {
+        margin-left: 10px;
+        margin-right: 0;
+        transform: unset;
+    }
+}
+
+.matchTopText {
+    @include centerElement;
+}
+
+.matchItem {
+    padding: 25px;
+    border-radius: 7px;
+    background-color: $adminItemBG;
+
+    & + & {
+        margin-top: 35px;
+
+        @media (max-width: 500px) {
+            margin-top: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+}
+
+.matchSubtitle {
+    margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+.matchText {
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+.matchActions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 50px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 30px;
+    }
+}
+
+.matchActionsError {
+    margin-top: 20px;
+    color: $secondary;
+    text-align: center;
+}
+
+.matchContent {
+    padding: 50px 40px;
+
+    @media (max-width: 768px) {
+        padding: 15px 0;
+    }
+}
+
+.matchActionsItem {
+    border-radius: 7px;
+    background-color: $menuBG;
+    font-size: 14px;
+    padding: 10px 15px;
+    color: $primary;
+    transition: all .15s;
+
+    &:hover {
+        background-color: $primary;
+        color: $secondary;
+        filter: brightness(1);
+    }
+
+    & + & {
+        margin-left: 20px;
+
+        @media (max-width: 768px) {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        width: 100%;
+    }
+}
+
+.matchPlayersList {
+    @media (max-width: 768px) {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        @include customScroll;
+        padding: 15px;
+
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+    }
+}
+
+.matchActionsItemRed {
+    background-color: $secondary;
+}
+
+.matchPlayersItem {
+    @include listItem;
+
+    @media (max-width: 768px) {
+        min-width: 600px;
+    }
+}
+
+.matchPlayersItemWrap {
+    display: flex;
+    align-items: center;
+}
+
+.matchPlayersItemImg {
+    @include circleImg;
+    margin-right: 10px;
+}
+
+.matchPlayersItemBox {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.matchBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.matchPlayersEditItem {
+    & + & {
+        margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+        min-width: 400px;
+    }
+}
+
+.matchTabsWrap {
+    @media (max-width: 768px) {
+        overflow-y: hidden;
+        overflow-x: auto;
+        @include customScroll;
+        padding-bottom: 3px;
+
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
+}
+
+.matchTabsWrapStatic {
+    pointer-events: none;
+}
+
+.matchPlayersItemBtn {
+    @include listItem;
+    transition: all .15s;
+}
+
+.matchPlayersItemBtnInteractive {
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blackLight;
+    }
+}
+
+.matchPlayersItemBtnActive {
+    border-radius: 7px 7px 0 0;
+}
+
+.matchPlayersArrow {
+    width: 15px;
+    height: 15px;
+    fill: $primary;
+    transform: rotate(90deg);
+    margin-left: auto;
+}
+
+.matchPlayersArrowActive {
+    transform: rotate(-90deg);
+}
+
+.matchPlayersItemContent {
+    display: none;
+}
+
+.matchPlayersItemContentActive {
+    display: block;
+    padding: 15px;
+    border-radius: 0 0 7px 7px;
+    background-color: $divisionBG;
+}
+
+.matchPlayersSubItem {
+    padding: 15px 0 15px 10px;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & + & {
+        border-top: 1px solid $btnRegisterBG;
+    }
+}
+
+.matchPlayersSubItemText {
+    margin-right: 20px;
+}
+
+.matchPlayersSubItemInp {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    border: 1px solid $checkboxToggleBG;
+    background-color: $adminItemBG;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+    transition: all .15s;
+
+    &:hover, &:focus {
+        border-color: $primary;
+    }
+}
+
+.matchPlayersSubItemRightPadding {
+    padding: 0 30px;
+}
+
+
+.teamsPopupTitle {
+    padding: 15px;
+    text-align: center;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: calc(100% - 40px);
+        height: 1px;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        background-color: $btnRegisterBG;
+    }
+}
+
+.teamsPopupTitleBtn {
+    padding: 5px;
+    @include centerFlex;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: $primary;
+        transition: all .15s;
+    }
+
+    &:hover {
+        svg {
+            fill: $secondary;
+        }
+    }
+}
+
+.teamsPopupTitleClose {
+    padding: 15px 50px;
+}
+
+.teamsPopupContent {
+    padding: 20px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include customScroll;
+
+    @media (max-width: 500px) {
+        padding: 15px;
+    }
+}
+
+.teamsPopupText {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.teamsPopupBtns {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+}
+
+.teamsPopupBtn {
+    @include defaultBtn;
+    padding: 5px 15px;
+
+    & + & {
+        margin-left: 10px;
+
+        @media (max-width: 500px) {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        width: 100%;
+    }
+}
+
+.teamsPopupBtnGray {
+    background-color: $menuBG;
+}
+
+.pending{
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+
+.active{
+    background-color: $secondary;
+}
+
+.pendingBtn{
+    width: max-content;
+}
+
+.disable{
+    background: #575757;
+    pointer-events: none;
+    filter: brightness(.5);
+}
+
+.marginReturn{
+    margin-bottom: 20px;
+}
+
+.matchArrowLinkTT {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    @include centerFlex;
+    border-radius: 50%;
+    position: absolute;
+    top: 24%;
+    cursor: pointer;
+    border: 1px solid #666;
+    background-color: #666;
+    color: #fff;
+    border-radius: 50%;
+
+    &:hover{
+        background-color: #575757;
+    }
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: $primary;
+        transform: rotate(180deg);
+    }
+}

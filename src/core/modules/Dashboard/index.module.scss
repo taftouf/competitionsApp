@@ -1,0 +1,565 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.container {
+    width: 100%;
+}
+
+.dashboard {
+    max-width: 1300px;
+    // padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;
+    background-color: $bg;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+    margin-top: 10px;
+}
+
+.dashboardMobileWrap {
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.dashboardAside {
+    max-width: 320px;
+    width: 100%;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+        max-width: unset;
+    }
+}
+
+.dashboardTeams {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: $blackLight;
+}
+
+.dashboardTeamsEmpty {
+    padding: 15px;
+    background-color: $secondary;
+    text-align: center;
+    transition: all .15s;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        background-color: $blackLighter;
+    }
+}
+
+.dashboardTitle {
+    padding: 18px 25px;
+    background-color: $blackLighter;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.dashboardTitleExpanded {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .15s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blackLight;
+    }
+
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: $white;
+        transform: rotate(90deg);
+    }
+}
+
+.dashboardTitleWithoutRadius {
+    border-radius: 0;
+}
+
+.dashboardTitleOpened {
+    svg {
+        transform: rotate(-90deg);
+    }
+}
+
+.dashboardContent {
+    padding: 0 15px;
+}
+
+.dashboardTeamsInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboardTeamsInfoImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.dashboardTeamsInfoName {
+    margin-bottom: 5px;
+}
+
+.dashboardTeamsInfoMembers {
+    padding: 3px 8px;
+    font-size: 14px;
+    border-radius: 7px;
+    box-shadow: $shadow;
+    background-color: $blackLighter;
+    display: inline-block;
+}
+
+.dashboardBtn {
+    @include btn;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+
+    & + & {
+        margin-top: 15px;
+    }
+}
+
+.dashboardBtnRed {
+    background-color: $secondary;
+}
+
+.dashboardItem {
+    padding: 15px 0;
+
+    & + & {
+        border-top: 1px solid $primary;
+    }
+}
+
+.dashboardSubtitle {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardSubtitleImg {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    margin-left: 5px;
+}
+
+.dashboardCompetitionItem {
+    & + & {
+        margin-top: 30px;
+    }
+}
+
+.dashboardCompetitionHead {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.dashboardCompetitionPhoto {
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+.dashboardCompetitionName {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.dashboardCompetitionGroup {
+    margin-left: auto;
+}
+
+.dashboardCompetitionGame {
+    display: flex;
+    align-items: center;
+}
+
+.dashboardCompetitionGameImg {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: block;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.dashboardCompetitionGameTeam {
+    padding: 5px;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.dashboardCompetitionGameDate {
+    text-align: center;
+    margin: 0 10px;
+    flex-shrink: 0;
+    min-width: 50px;
+
+    span {
+        display: block;
+    }
+
+    @media (max-width: 1300px) {
+        font-size: 14px;
+    }
+}
+
+.dashboardCompetitionGameTeamHome {
+    justify-content: flex-end;
+    background: linear-gradient(to right, $blackLight 0%, $btnBG 100%);
+
+    &.dashboardCompetitionGameTeamActive {
+        background: linear-gradient(to right, $blackLight 0%, $secondary 100%);
+    }
+
+    .dashboardCompetitionGameImg {
+        margin-left: 8px;
+    }
+}
+
+.dashboardCompetitionGameTeamVisitor {
+    background: linear-gradient(to right, $btnBG 0%, $blackLight 100%);
+
+    &.dashboardCompetitionGameTeamActive {
+        background: linear-gradient(to right, $secondary 0%, $blackLight 100%);
+    }
+
+    .dashboardCompetitionGameImg {
+        margin-right: 8px;
+    }
+}
+
+.dashboardLink {
+    text-decoration: underline;
+    font-weight: 400;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.dashboardLinkWrap {
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+.dashboardDivisionItem {
+    display: flex;
+    align-items: center;
+    background-color: $divisionBG;
+    box-shadow: $shadow;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-right: 10px;
+
+    & + & {
+        margin-top: 12px;
+    }
+}
+
+.cursorInit{
+    cursor: initial;
+}
+
+.dashboardDivisionItemActive {
+    background: linear-gradient(to right, $secondary 0%, $blackLight 100%);
+}
+
+.dashboardTableDivisionRank {
+    padding: 10px 8px;
+    font-weight: 600;
+    border-right: 1px solid $primary;
+    width: 35px;
+    flex-shrink: 0;
+    @include centerFlex;
+}
+
+.dashboardTableInfo {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+
+    span {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100px;
+    }
+}
+
+.dashboardTableInfoImg {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.dashboardTableRank {
+    padding: 0 10px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.dashboardTableRankName {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 15px);
+    transform: translateX(-50%);
+    font-size: 12px;
+}
+
+.dashboardTableXP {
+    white-space: nowrap;
+}
+
+.dashboardOrgs {
+    max-width: 320px;
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background-color: $blackLight;
+
+    @media (max-width: 1024px) {
+        margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+        max-width: unset;
+    }
+}
+
+.dashboardGeneralContent {
+    margin: 0 15px;
+    flex-grow: 1;
+
+    @media (max-width: 1024px) {
+        margin-left: 0;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        margin: 0 0 15px;
+    }
+}
+
+.dashboardFilterWrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.dashboardOrgsType {
+    & + & {
+        margin-top: 25px;
+    }
+}
+
+.dashboardOrgsTypeLink {
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: block;
+    cursor: initial;
+}
+
+.dashboardOrgsSwiperWrap {
+    position: relative;
+}
+
+.dashboardOrgsSwiperArrow {
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    background-color: $btnRegisterBG;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .15s;
+    z-index: 3;
+    cursor: pointer;
+
+    svg {
+        width: 10px;
+        height: 10px;
+        fill: $white;
+    }
+
+    &:hover {
+        filter: brightness(.8);
+    }
+}
+
+.dashboardOrgsSwiperArrowPrev {
+    left: 0;
+    transform: translate(-50%, -50%);
+
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+.dashboardOrgsSwiperArrowNext {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.dashboardOrgsSwiperArrowDisabled {
+    pointer-events: none;
+    display: none;
+}
+
+.dashboardContentTop {
+    height: $dashboardTopPanelHeight;
+    padding: 10px 30px;
+    border-radius: 8px;
+    background-color: $blackLighter;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+        padding: 10px 15px;
+    }
+}
+
+.dashboardContentBtn {
+    width: auto;
+    color: $white;
+    background-color: $secondary;
+    border-radius: 7px;
+    box-shadow: $shadow;
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: all .15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &:hover {
+        color: $secondary;
+        background-color: $white;
+    }
+}
+
+.dashboardContentTopText {
+    font-size: 20px;
+    margin-right: 30px;
+
+    @media (max-width: 1300px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+.dashboardContentItem {
+    border-radius: 7px;
+    background-color: $blackLight;
+    overflow: hidden;
+
+    & + & {
+        margin-top: 15px;
+    }
+}
+.overflow{
+    overflow: visible;
+}
+
+.dashboardContentCalendar {
+    padding: 30px 40px 10px;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+}
+
+.dashboardContentWrap {
+    padding: 25px;
+}
+
+.dashboardContentList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px 10px;
+
+    @media (max-width: 1300px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 1150px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.dashboardContentMore {
+    border-radius: 7px;
+    background-color: $btnBG;
+    display: block;
+    @include centerFlex;
+    padding: 30px 10px;
+
+    &:hover {
+        .dashboardContentMoreText {
+            svg {
+                transform: translateX(10px);
+            }
+        }
+    }
+}
+
+.dashboardContentMoreText {
+    max-width: 110px;
+    font-size: 14px;
+
+    svg {
+        width: 13px;
+        height: 13px;
+        fill: $white;
+        display: block;
+        margin-top: 10px;
+        transition: all .15s;
+    }
+}
+
+.dashboardContentTabsWrap {
+    margin-bottom: 20px;
+}
+.dashboardOrgsSwiperItem{
+    height: auto !important;
+}
+
+.fixWidth{
+    max-width: 320px;
+    width: 100%;
+    flex-shrink: 0;
+}

@@ -1,0 +1,32 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.discover {
+    width: 100%;
+    padding: 15px;
+}
+
+.discoverWrap {
+    display: flex;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.discoverInner {
+    max-width: 755px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.discoverItem {
+    border-radius: 7px;
+    background-color: $blackLight;
+    overflow: hidden;
+
+    & + & {
+        margin-top: 15px;
+    }
+}

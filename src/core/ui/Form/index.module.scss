@@ -1,0 +1,8 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.form {
+    border-radius: 10px;
+    background-color: $bg;
+    padding: 30px;
+}

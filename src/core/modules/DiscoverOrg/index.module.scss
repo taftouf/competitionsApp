@@ -1,0 +1,45 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.discoverOrgLoader {
+    width: 100%;
+    @include centerFlex;
+}
+
+.discoverOrg {
+    padding: 50px 15px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+}
+
+.discoverOrgInner {
+    max-width: 920px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.discoverOrgTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+    }
+}
+
+.discoverOrgImg  {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.discoverOrgName {
+    font-size: 28px;
+    font-weight: 400;
+}

@@ -1,0 +1,39 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.org {
+    width: 100%;
+    display: flex;
+
+    @media (max-width: 1024px) {
+        padding: 35px 15px 15px;
+        position: relative;
+        flex-direction: column;
+    }
+}
+
+.orgContent {
+    flex-grow: 1;
+    padding: 25px 15px;
+}
+
+.orgContentWrap {
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: $adminItemBG;
+}
+
+.orgTitle {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 400;
+
+    @media (max-width: 500px) {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+}

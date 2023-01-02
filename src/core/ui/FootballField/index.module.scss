@@ -1,0 +1,263 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+
+.wrapper {
+  margin: 0 auto;
+  // width:100%;
+}
+
+.campo {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  margin: 20px auto;
+  padding: 0 0 60% 0;
+  text-align: center;
+}
+
+// Attack
+
+
+.bu2{
+  position: absolute;
+  top: 24%;
+  left: 44.5%;
+  .bu2Text{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 0.5%;
+  }
+}
+.avd{
+  position: absolute;
+  top: 46%;
+  left: 70%;
+  .avdText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: -5%;
+  }
+}
+.bu1{
+  position: absolute;
+  top: 46%;
+  left: 44.5%;
+  .bu1Text{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 0.5%;
+  }
+}
+.avg{
+  position: absolute;
+  top: 46%;
+  left: 19%;
+  .avgText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: -5%;
+  }
+}
+.ad{
+  position: absolute;
+  top: 69%;
+  left: 81%;
+  .adText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 3%;
+  }
+}
+.ag{
+  position: absolute;
+  top: 69%;
+  left: 8%;
+  .agText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 5%;
+  }
+}
+
+
+// Centre
+
+.moc{
+  position: absolute;
+  top: 91%;
+  left: 44.5%;
+  .mocText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: -15%;
+  }
+}
+.md{
+  position: absolute;
+  top: 120%;
+  left: 77%;
+  .mdText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 1%;
+  }
+}
+.mc2{
+  position: absolute;
+  top: 120%;
+  left: 55.5%;
+  .mc2Text{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 1%;
+  }
+}
+.mc1{
+  position: absolute;
+  top: 120%;
+  left: 33%;
+  .mc1Text{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 1%;
+  }
+}
+.mg{
+  position: absolute;
+  top: 120%;
+  left: 12%;
+  .mgText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 1%;
+  }
+}
+.mdc{
+  position: absolute;
+  top: 143%;
+  left: 44.5%;
+  .mdcText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: -15%;
+  }
+}
+
+// Deff
+.dld{
+  position: absolute;
+  top: 167%;
+  left: 81%;
+  .dldText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: -10%;
+  }
+}
+
+.dlg{
+  position: absolute;
+  top: 167%;
+  left: 8%;
+  .dlgText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: -4%;
+  }
+}
+
+.dd{
+    position: absolute;
+    top: 191%;
+    left: 75%;
+    .ddText{
+      cursor: pointer;
+      position: absolute;
+      top: -66%;
+      left: 1%;
+    }
+}
+
+.dc1{
+  position: absolute;
+  top: 191%;
+  left: 32%;
+  .dc1Text{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 1%;
+  }
+}
+
+.dc2{
+  position: absolute;
+  top: 191%;
+  left: 57%;
+  .dc2Text{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 1%;
+  }
+}
+
+.dg{
+  position: absolute;
+  left: 13.5%;
+  top: 191%;
+  .dgText{
+    cursor: pointer;
+    position: absolute;
+    top: -66%;
+    left: 1%;
+  }
+}
+
+// GK
+.gk{
+    position: absolute;
+    top: 212%;
+    left: 44.5%;
+    fill: red($color: #000000);
+    .gkText{
+      cursor: pointer;
+      position: absolute;
+      top: -66%;
+      left: 13%;
+    }
+}
+
+
+.greenCenter{
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+}
+
+.redDeff{
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(32deg) brightness(119%) contrast(119%);
+}
+
+.blueAtt{
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(168deg) brightness(119%) contrast(119%);
+}
+
+svg{
+  width: 50px;
+  height: 20px;
+}

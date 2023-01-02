@@ -1,0 +1,36 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.date {
+    position: relative;
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        fill: $primary;
+        z-index: 3;
+        pointer-events: none;
+    }
+}
+
+.dateEL {
+    padding: 10px 15px 10px 50px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: $blackLighter;
+    border-radius: 7px;
+    transition: .15s;
+    width: 100%;
+
+    &:hover, &:focus {
+        background-color: $divisionBG;
+    }
+}
+
+.dateELDisabled {
+    pointer-events: none;
+}

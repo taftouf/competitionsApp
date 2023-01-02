@@ -1,0 +1,17 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.game {
+    width: 100%;
+}
+
+.gameLoading {
+    @include centerFlex;
+}
+
+.gameMatchWrap {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0;
+}

@@ -1,0 +1,50 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.swiperImg {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.swiperImgActive {
+    border: 2px solid $secondary;
+}
+
+.swiperItem {
+    text-align: center;
+}
+
+.noMargin{
+    margin-right: 0px !important;
+}
+
+.swiperItemLink {
+    display: block;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: $checkboxBG;
+    color: $black;
+    @include centerFlex;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.swiperWrapper {
+    display: flex;
+    justify-content: center;
+    max-width: 170px;
+    margin: 0 auto 20px;
+}
+
+.swiper {
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+.swiperWithNavigation {
+    padding: 0 25px;
+}

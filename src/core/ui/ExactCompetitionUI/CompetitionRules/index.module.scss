@@ -1,0 +1,29 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.rules {
+    font-weight: 400;
+}
+
+.rulesItem {
+    & + & {
+        margin-top: 20px;
+    }
+}
+
+.rulesTitle {
+    margin-bottom: 5px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+.rulesText {
+    font-size: 14px;
+    color: $forgotPass;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}

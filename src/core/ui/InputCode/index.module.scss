@@ -1,0 +1,37 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.codeInput {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .codeLabel {
+    margin-bottom: 16px;
+  }
+  .codeInputs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .codeInputs input {
+    border: none;
+    background-image: none;
+    background-color: white;
+    color: black;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-align: center;
+    height: 60px;
+    width: 40px;
+    border-radius: 10px;
+    margin: 0 4px;
+    border: 2px solid #4f5b66;
+    font-size: 38px;
+  }
+  .codeInputs input:focus {
+    outline: none;
+  }
+ 
+  

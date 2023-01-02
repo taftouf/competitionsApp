@@ -1,0 +1,130 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.pageWrapper{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: auto;
+    width: _n_;
+    height: _n_;
+    background: $blackLight;
+}
+
+.pageWrapperContent{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+.containerContent{
+    padding: 45px;
+    padding-top: 0;
+}
+
+.img{
+    margin-top: 200px;
+    margin-left: 100px; 
+    margin-right: 50px; 
+}
+
+.banner{
+    height: 300px;
+}
+
+.text{
+    margin: 20px;
+    margin-right: 50px;
+    width: 750px;
+    max-height: 85vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include customScroll;
+    border: 1px solid $membersBG ;
+    border-radius: 7px;
+    background-color: $membersBG;
+    text-align: justify!important;
+    font-family: Roboto,sans-serif;
+}
+
+.text::-webkit-scrollbar-track {
+    background: #999;
+}
+.text::-webkit-scrollbar-thumb {
+    background-color: black ;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+.text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.textMobile{
+    width: 90% !important;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.header{
+    position: sticky;
+    top: 0px;
+    color: black;
+    font-family: Roboto,sans-serif;
+    line-height: 1.5;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: $membersBG;
+    width: 99%;
+    padding: 40px;
+}
+
+.matchArrowLink {
+    margin-right: 10px;
+    cursor: pointer;
+    padding-right: 5px;
+    padding-left: 5px;
+    svg {
+        width: 20px;
+        height: 20px;
+        transform: unset;
+    }
+}
+
+.matchArrowLink:hover {
+    border-radius: 6px;
+    background-color: $scrollBarBG;
+}
+
+.body{
+    color: black;
+}
+
+.headerI{
+    color: black;
+    font-family: Roboto,sans-serif;
+    line-height: 1.5;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.headerII{
+    color: #666666 !important;
+    font-family: Roboto,sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.parag{
+    color: rgba(0,0,0,.6);
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    letter-spacing: .0071428571em;
+}
+.lien{
+    cursor: pointer;
+}
+.paragMarging{
+    margin-top: 20px;
+}

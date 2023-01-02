@@ -1,0 +1,25 @@
+@import '../../../../assets/styles/includes/vars';
+@import '../../../../assets/styles/includes/mixins';
+
+.discoverNav {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $primary;
+}
+
+.discoverNavLink {
+    padding: 10px 18px;
+    display: block;
+    border-radius: 7px;
+    font-size: 14px;
+
+    & + & {
+        margin-left: 10px;
+    }
+}
+
+.discoverNavLinkActive {
+    background-color: $primary;
+    color: $secondary;
+}

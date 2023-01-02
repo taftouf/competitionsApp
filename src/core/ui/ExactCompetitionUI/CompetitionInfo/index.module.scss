@@ -1,0 +1,164 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.competition {
+    padding: 50px 15px;
+    background-color: $blackLight;
+    border-top: 1px solid $blackLighter;
+    border-bottom: 1px solid $blackLighter;
+
+    @media (max-width: 1024px) {
+        padding: 25px 15px;
+    }
+}
+
+.competitionInner {
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+}
+
+.relative{
+    position: relative !important;
+}
+
+.competitionImgWrap {
+    border-radius: 7px;
+    background-color: transparent;
+    @include centerFlex;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 50px;
+    width: 280px;
+    height: 280px;
+
+    @media (max-width: 1024px) {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    @media (max-width: 768px) {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.competitionImg {
+    width: inherit;
+}
+
+.competitionContent {
+    flex-grow: 1;
+
+    @media (max-width: 1024px) {
+        text-align: center;
+    }
+}
+
+.competitionName {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
+}
+
+.competitionOrganizerWrap {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+
+    @media (max-width: 1024px) {
+        justify-content: center;
+    }
+}
+
+.competitionOrganizer {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    margin-left: 15px;
+}
+
+.competitionOrganizerImg {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.competitionMore {
+    display: flex;
+}
+
+.competitionMoreItem {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    background-color: $primary;
+    border-radius: 7px;
+    box-shadow: $shadow;
+    padding: 10px 15px;
+    color: $blackLight;
+
+    svg {
+        fill: $blackLight;
+        flex-shrink: 0;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+    }
+
+    & + & {
+        margin-left: 25px;
+
+        @media (max-width: 768px) {
+            margin-left: 15px;
+        }
+    }
+}
+
+.competitionMoreItemCalendar {
+    svg {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.mainInfoBack {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    @include centerFlex;
+    border-radius: 50%;
+    position: absolute;
+    left: -21%;
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: $primary;
+        transform: rotate(180deg);
+    }
+
+    @media (max-width: 1100px) {
+        top: 45%;
+        left: -15%;
+    }
+
+    @media (max-width: 1024px) {
+        top: 0%;
+        left: 0%;
+    }
+}

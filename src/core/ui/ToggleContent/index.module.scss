@@ -1,0 +1,48 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.toggleContent {
+    width: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: $blackLight;
+}
+
+.toggleContentBtn {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: all .15s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blackLighter;
+    }
+
+    svg {
+        fill: $primary;
+        width: 13px;
+        height: 13px;
+        transform: rotate(90deg);
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+.toggleContentBtnActive {
+    svg {
+        transform: rotate(-90deg);
+    }
+}
+
+.toggleContentInner {
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+}

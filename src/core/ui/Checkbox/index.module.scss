@@ -1,0 +1,89 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.checkboxWrap {
+    cursor: pointer;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.checkboxWrapDisabled {
+    pointer-events: none;
+}
+
+.checkboxWrapFlex {
+    display: inline-flex;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    background-color: $checkboxBG;
+    transition: all .15s;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.checkboxToggle {
+    width: 30px;
+    height: 16px;
+    border-radius: 10px;
+    background-color: $checkboxToggleBG;
+}
+
+.checkboxActive {
+    background-color: $secondary;
+}
+
+.checkboxError {
+    border: 2px solid $secondary;
+}
+
+.checkboxIcon {
+    @include centerElement;
+    width: 13px;
+    height: 13px;
+    fill: $white;
+    animation: showCheckIcon .15s forwards;
+
+    @keyframes showCheckIcon {
+        0% {
+            transform: scale(0) translate(-50%, -50%);
+        }
+
+        100% {
+            transform: scale(1) translate(-50%, -50%);
+        }
+    }
+}
+
+.checkboxEL {
+    display: none;
+}
+
+.checkboxText {
+    font-size: 14px;
+    font-weight: 400;
+    user-select: none;
+    margin-left: 10px;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.checkboxToggleCircle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: $primary;
+    transition: all .15s;
+}
+
+.checkboxToggleCircleActive {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}

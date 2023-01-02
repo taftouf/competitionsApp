@@ -1,0 +1,130 @@
+@import '../../../../assets/styles/includes/vars';
+@import '../../../../assets/styles/includes/mixins';
+
+.competitionsTitle {
+    padding: 18px 25px;
+    background-color: $blackLighter;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.competitionsTitleExpanded {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .15s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blackLight;
+    }
+
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: $white;
+        transform: rotate(90deg);
+    }
+}
+
+.competitionsTitleWithoutRadius {
+    border-radius: 0;
+}
+
+.competitionsTitleOpened {
+    svg {
+        transform: rotate(-90deg);
+    }
+}
+
+.competitionsTabsWrap {
+    margin-bottom: 20px;
+}
+
+.competitionsWrap {
+    padding: 25px;
+}
+
+.competitionsFilterWrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.competitionsList {
+    display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(10px, 50px));
+    grid-gap: 10px 10px;
+
+    @media (min-width: 2000px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 2000px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 1300px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px 30px;
+    }
+
+    @media (max-width: 1150px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.competitionsItemInner {
+    height: 100%;
+}
+
+.competitionsItem {
+    @media (max-width: 350px) {
+        width: 100px;
+    }
+}
+
+.competitionsMore {
+    border-radius: 7px;
+    background-color: $btnBG;
+    display: block;
+    @include centerFlex;
+    padding: 30px 10px;
+    @media (max-width: 350px) {
+        width: 100px;
+    }
+
+    &:hover {
+        .competitionsMoreText {
+            svg {
+                transform: translateX(10px);
+            }
+        }
+    }
+}
+
+.competitionsMoreText {
+    max-width: 110px;
+    font-size: 14px;
+
+    svg {
+        width: 13px;
+        height: 13px;
+        fill: $white;
+        display: block;
+        margin-top: 10px;
+        transition: all .15s;
+    }
+}
+
+.voirPlus{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin-top: 20px;
+    color: $secondary;
+    transition: all .15s;
+    cursor: pointer;
+    &:hover {
+        color: $primary;
+    }
+}

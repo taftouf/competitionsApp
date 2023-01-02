@@ -1,0 +1,30 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+            "29QM2YVB2S.fr.theifc.IFC"
+        ],
+        "components": [
+          {
+            "/": "/reinitialiser-mon-mdp",
+            "?": { "token": "*" },
+            "comment": "Matches reset password url"
+          }
+        ]
+      },
+      {
+        "appID": "29QM2YVB2S.fr.theifc.IFC",
+        "paths": [
+          "/reinitialiser-mon-mdp"
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+        "29QM2YVB2S.fr.theifc.IFC"
+    ]
+  }
+}

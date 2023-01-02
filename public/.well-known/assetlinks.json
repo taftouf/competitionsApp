@@ -1,0 +1,9 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.theifc.IFC",
+      "sha256_cert_fingerprints":
+      ["8C:0F:0C:56:CA:CF:1C:36:5C:11:32:10:8B:FF:7B:D9:93:C0:EA:31:5F:DF:0C:1A:CA:28:A8:5E:BD:4D:BD:37"]
+    }
+  }]

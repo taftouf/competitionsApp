@@ -1,0 +1,126 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.container {
+    width: 100%;
+    background-size: auto 1000px;
+    background-repeat: no-repeat;
+}
+
+.team {
+    max-width: 1024px;
+    width: 100%;
+    background-color: $bg;
+    margin: 0 auto;
+}
+
+.teamLoaderWrapper {
+    @include centerFlex;
+    width: 100%;
+}
+
+.teamContent {
+    padding: 50px;
+    display: flex;
+
+    @media (max-width: 1024px) {
+        padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.teamResults {
+    width: 100%;
+}
+
+.teamResultsItem {
+    padding: 30px 40px;
+    border-radius: 7px;
+    background-color: $blackLight;
+
+    & + & {
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        background-color: $blackLighter;
+        padding: 15px;
+    }
+}
+
+.teamResultsTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.teamResultsTopImg {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.teamResultsTopContent {
+
+}
+
+.teamResultsTopContentBox {
+    font-weight: 400;
+
+    span {
+        display: inline-block;
+        margin: 0 13px 0 10px;
+        font-weight: 500;
+    }
+}
+
+.teamResultsTopContentImg {
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.teamResultsTopContentLink {
+    text-decoration: underline;
+}
+
+.teamResultsTopContentDate {
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.teamResultsContent {
+    @include centerFlex;
+    flex-direction: column;
+}
+
+.teamResultsContentBox {
+    max-width: 225px;
+    width: 100%;
+}
+
+.teamResultsWinner {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.teamResultsWinnerImg {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.teamResultsWinnerName {
+    font-size: 14px;
+    font-weight: 400;
+}

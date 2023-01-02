@@ -1,0 +1,378 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.match {
+    display: flex;
+    align-items: center;
+}
+
+.matchWrap {
+    width: 100%;
+    text-align: center;
+
+    & + & {
+        margin-top: 20px;
+    }
+}
+
+.matchInfo {
+    width: 75px;
+    height: 75px;
+    padding: 5px;
+    @include centerFlex;
+    border-radius: 50%;
+    background-color: $primary;
+    flex-shrink: 0;
+    margin: 0 15px;
+    color: $blackLight;
+
+    @media (max-width: 768px) {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.matchTeam {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 7px;
+    background: linear-gradient(to right, $blackLight 20%, $divisionBG 100%);
+
+    &.matchTeamAdmin {
+        background: linear-gradient(to right, $adminItemBG 20%, $divisionBG 100%);
+
+        &.matchTeamUser {
+            background: linear-gradient(to right, $adminItemBG 20%, $secondary 100%);
+        }
+
+        & + & {
+            margin-left: 25px;
+        }
+    }
+
+    &.matchTeamUser {
+        background: linear-gradient(to right, $blackLight 20%, $secondary 100%);
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
+}
+
+.matchImg {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    margin-left: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+        margin-left: 10px;
+    }
+
+    @media (max-width: 500px) {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.matchTeamVisitor {
+    justify-content: flex-start;
+    background: linear-gradient(to left, $blackLight 20%, $divisionBG 100%);
+
+    &.matchTeamAdmin {
+        background: linear-gradient(to left, $adminItemBG 20%, $divisionBG 100%);
+
+        &.matchTeamUser {
+            background: linear-gradient(to right, $secondary 20%, $adminItemBG 80%);
+        }
+    }
+
+    &.matchTeamUser {
+        background: linear-gradient(to right, $secondary 20%, $blackLight 80%);
+    }
+
+    .matchImg {
+        margin-left: 0;
+        margin-right: 15px;
+
+        @media (max-width: 768px) {
+            margin-right: 10px;
+        }
+    }
+}
+
+.matchScore {
+    font-size: 28px;
+    font-weight: 400;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+}
+
+.matchInfoAdmin {
+    @include centerFlex;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.matchScoreAdmin {
+    display: flex;
+    align-items: center;
+}
+
+.matchScoreAdminInp {
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+    font-weight: 400;
+    border-radius: 7px;
+    border: 1px solid $primary;
+    @include centerFlex;
+    color: $primary;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 5px;
+
+    & + input {
+        margin-left: 25px;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    @media (max-width: 500px) {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+.matchFlag {
+    margin: 0 25px;
+    flex-shrink: 0;
+    @include centerFlex;
+    cursor: pointer;
+
+    svg {
+        width: 21px;
+        height: 21px;
+        fill: $primary;
+    }
+}
+
+.matchFlagForfeited {
+    svg {
+        fill: $secondary;
+    }
+}
+
+.matchDate {
+    text-align: center;
+
+    span {
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+.matchDateAdmin {
+    @extend .matchInfo;
+
+    span {
+        display: block;
+    }
+}
+
+.matchAdmin {
+    padding: 10px 20px;
+    border-radius: 7px;
+    background-color: $divisionBG;
+    font-weight: 400;
+    margin-top: 15px;
+    transition: all .15s;
+    display: inline-block;
+    color: $primary;
+
+    &:hover {
+        background-color: $blackLighter;
+    }
+}
+
+.matchCaptain {
+    @extend .matchAdmin;
+    background-color: $secondary;
+}
+
+.teamsPopupTitle {
+    padding: 15px;
+    text-align: center;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: calc(100% - 40px);
+        height: 1px;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        background-color: $btnRegisterBG;
+    }
+}
+
+.teamsPopupTitleBtn {
+    padding: 5px;
+    @include centerFlex;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: $primary;
+        transition: all .15s;
+    }
+
+    &:hover {
+        svg {
+            fill: $secondary;
+        }
+    }
+}
+
+.teamsPopupTitleClose {
+    padding: 15px 50px;
+}
+
+.teamsPopupContent {
+    padding: 20px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include customScroll;
+
+    @media (max-width: 500px) {
+        padding: 15px;
+    }
+}
+
+.teamsPopupText {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.teamsPopupBtns {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+}
+
+.teamsPopupBtn {
+    @include defaultBtn;
+    padding: 5px 15px;
+
+    & + & {
+        margin-left: 10px;
+
+        @media (max-width: 500px) {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        width: 100%;
+    }
+}
+
+.teamsPopupBtnGray {
+    background-color: $menuBG;
+}
+
+.disabled{
+    pointer-events: none;
+}
+.competitionGameTeamActiveR{
+    background: linear-gradient(to right, $blackLight 0%, $secondary 100%);
+}
+.competitionGameTeamActiveL{
+    background: linear-gradient(to left, $blackLight 0%, $secondary 100%);
+}
+
+.matchMobile{
+    display: flex;
+    flex-direction: column;
+}
+
+.matchTeamMobile{
+    margin-top: 5px;
+    background: linear-gradient(to left, $blackLight 20%, $divisionBG 100%) !important;
+}
+
+.matchTeamMobileR{
+    flex-direction: row-reverse;
+}
+
+.matchImgMobile{
+    margin-left: 0px;
+    margin-right: 10px;
+}
+.matchWrapMobile{
+    display: flex;
+    justify-content: space-between;
+}
+
+.matchScoreMobile{
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 7px;
+    border: 1px solid $primary;
+    @include centerFlex;
+    color: $primary;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 5px;
+}
+
+.matchDateMobile{
+    width: 45px;
+    height: 90px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 7px;
+    border: 1px solid $primary;
+    @include centerFlex;
+    display: inline-grid;
+}

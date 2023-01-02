@@ -1,0 +1,71 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.tabs {
+    display: flex;
+    width: 100%;
+}
+
+.tabsItem {
+    width: 100%;
+    padding: 10px 20px;
+    position: relative;
+    color: $white;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .15s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        color: $red;
+    }
+}
+
+.tabsItemActive {
+    color: $red;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $red;
+        border-right: 3px;
+    }
+}
+
+.tabsRichly {
+    .tabsItem {
+        &:hover {
+            color: $secondary;
+        }
+    }
+
+    .tabsItemActive {
+        color: $secondary;
+
+        &::after {
+            background-color: $secondary;
+        }
+    }
+}
+
+.tabsHigh {
+    .tabsItem {
+        padding: 20px;
+    }
+}
+
+.tabsImg {
+    @include circleImg;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: $checkboxBG;
+}

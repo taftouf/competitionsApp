@@ -1,0 +1,123 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.tourney {
+    width: 100%;
+}
+
+.tourneyInner {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 20px;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+}
+
+.tourneyItem {
+    & + & {
+        margin-top: 15px;
+    }
+}
+
+.tourneyContent {
+    border-radius: 7px;
+    background-color: $blackLight;
+}
+
+.tourneyTabsWrap {
+    background-color: $blackLighter;
+    border-radius: 7px 7px 0 0;
+
+    @media (max-width: 768px) {
+        overflow-y: hidden;
+        overflow-x: auto;
+        @include customScroll;
+        padding-bottom: 3px;
+
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
+}
+
+.tourneyContentInner {
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+}
+
+.tourneyCalendarFilterWrap {
+    padding: 30px 15px;
+    @include centerFlex;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.tourneyTabsWrap {
+    @media (max-width: 768px) {
+        overflow-y: hidden;
+        overflow-x: auto;
+        @include customScroll;
+        padding-bottom: 3px;
+
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
+}
+
+.tourneyCalendarGames {
+    padding: 40px;
+
+    @media (max-width: 768px) {
+        padding: 30px 15px;
+    }
+}
+
+.tourneyGameName {
+    font-weight: 600;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $blackLighter;
+    margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.tourneyGameWrap {
+    & + & {
+        margin-top: 25px;
+    }
+}
+
+.marginReturn{
+    margin:20px;
+    margin-bottom: 0px !important;
+}
+
+.mainInfoBack {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    @include centerFlex;
+    border-radius: 50%;
+    position: absolute;
+    top: 22%;
+    
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: $primary;
+        transform: rotate(180deg);
+    }
+}

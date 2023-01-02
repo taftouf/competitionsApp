@@ -1,0 +1,23 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.user {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: $blackLighter;
+    height: $dashboardTopPanelHeight;
+
+    @media (max-width: 500px) {
+        margin: 0;
+    }
+}
+
+.userPhoto {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+}

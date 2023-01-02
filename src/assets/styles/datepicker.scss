@@ -1,0 +1,68 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.react-datepicker {
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 7px;
+    box-shadow: $shadow;
+}
+
+.react-datepicker__navigation {
+    top: 7px;
+}
+
+.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+    color: $blackLight;
+    padding: 10px 0;
+}
+
+.react-datepicker__navigation-icon--previous::before, .react-datepicker__navigation-icon--next::before {
+    border-color: $secondary;
+    transition: all .15s;
+}
+
+.react-datepicker__header {
+    background-color: $primary;
+    border: none;
+    padding: 0;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after {
+    border-bottom-color: $primary;
+    top: 1px;
+}
+
+.react-datepicker__month {
+    background-color: $blackLight;
+    margin: 0;
+    padding: 5px;
+}
+
+.react-datepicker__day, .react-datepicker__month-text, .react-datepicker__quarter-text, .react-datepicker__year-text {
+    color: $primary;
+}
+
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range, .react-datepicker__day--keyboard-selected, .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover, .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+    background-color: $secondary;
+    border-radius: 7px;
+}
+
+.react-datepicker__day:hover, .react-datepicker__month-text:hover, .react-datepicker__quarter-text:hover, .react-datepicker__year-text:hover {
+    border-radius: 7px;
+    background-color: $redDark;
+}
+
+.react-datepicker__day-names {
+    border-top: 1px solid rgba($blackLight, .1);
+    margin: 0;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+    @include centerFlex;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+    height: 150px;
+    @include customScroll;
+}

@@ -1,0 +1,61 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.popup {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    @include centerFlex;
+}
+
+.popupOuter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .7);
+    z-index: -1;
+}
+
+.popupInner {
+    border-radius: 7px;
+    background-color: $blackLight;
+    max-width: 450px;
+    width: 100%;
+
+    @media (max-width: 500px) {
+        max-width: calc(100% - 30px);
+    }
+}
+
+.popupInnerSmall {
+    max-width: 330px;
+}
+
+.popupInnerBig {
+    max-width: 600px;
+}
+
+.popupTop {
+    position: relative;
+    padding: 20px 70px;
+    text-align: center;
+    border-bottom: 1px solid $divisionBG;
+}
+
+.popupClose {
+    @include closeBtn;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popupTitle {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+}

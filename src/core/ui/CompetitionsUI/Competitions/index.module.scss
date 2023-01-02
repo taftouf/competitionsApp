@@ -1,0 +1,130 @@
+@import '../../../../assets/styles/includes/vars';
+@import '../../../../assets/styles/includes/mixins';
+
+.competitions {
+    width: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: $blackLight;
+}
+
+.competitionsTabsWrap {
+    background-color: $blackLighter;
+}
+
+.competitionsFilterWrap {
+    margin: 30px 0;
+    padding: 0 70px;
+    text-align: right;
+
+    @media (max-width: 1024px) {
+        padding: 0 25px;
+    }
+}
+
+.competitionsSwiperWrap {
+
+}
+
+.competitionsSwiperArrows {
+    position: absolute;
+    top: 0;
+    right: 70px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+        right: 25px;
+    }
+}
+
+.competitionsSwiperArrow {
+    width: 40px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: $btnBG;
+    @include centerFlex;
+    transition: all .15s;
+    cursor: pointer;
+
+    svg {
+        fill: $primary;
+        width: 10px;
+        height: 10px;
+    }
+
+    & + & {
+        margin-left: 5px;
+    }
+
+    &:hover {
+        background-color: $blackLighter;
+    }
+}
+
+.competitionsSwiperArrowPrev {
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+.competitionsSwiperArrowDisabled {
+    filter: brightness(.4);
+    pointer-events: none;
+}
+
+.orgWinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.orgWinnerImg {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.orgWinnerName {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.competitionsItem {
+    position: relative;
+
+    & + & {
+        margin-top: 50px;
+
+        @media (max-width: 500px) {
+            margin-top: 25px;
+        }
+    }
+}
+
+.competitionsItemDate {
+    font-weight: 600;
+    margin-bottom: 25px;
+
+    @media (max-width: 500px) {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+}
+
+.competitionsContent {
+    padding-left: 70px;
+    padding-bottom: 70px;
+
+    @media (max-width: 1024px) {
+        padding-bottom: 25px;
+        padding-left: 25px;
+    }
+}
+
+.competitionsContentTemplate {
+    padding: 30px;
+}

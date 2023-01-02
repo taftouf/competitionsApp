@@ -1,0 +1,133 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.select {
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.selectContent {
+    width: 100%;
+
+    .selectActive {
+        width: 100%;
+        background-color: $blackLighter;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            margin-left: auto;
+        }
+
+        &:hover {
+            background-color: rgba($blackLighter, .5);
+        }
+
+        @media (max-width: 650px) {
+            background-color: unset;
+            border-radius: 0;
+            padding: 15px 20px;
+        }
+    }
+
+    @media (max-width: 650px) {
+        margin-left: -15px;
+        width: calc(100% + 30px);
+    }
+}
+
+.selectOpened {
+    z-index: 3;
+}
+
+.selectText {
+    margin-right: 20px;
+    user-select: none;
+}
+
+.selectActive {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: $btnRegisterBG;
+    border-radius: 7px;
+    box-shadow: $shadow;
+    cursor: pointer;
+    transition: all .15s;
+
+    &:hover {
+        background-color: $blackLighter;
+    }
+
+    svg {
+        width: 10px;
+        height: 10px;
+        fill: $white;
+        transform: rotate(90deg);
+        margin-left: 10px;
+    }
+}
+
+.selectActiveOpened {
+    border-radius: 7px 7px 0 0;
+}
+
+.selectActiveFull {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.selectDrop {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $blackLighter;
+    border-radius: 0 0 7px 7px;
+    overflow: auto;
+    max-height: 150px;
+    z-index: 3;
+    @include customScroll;
+}
+
+.selectItem {
+    padding: 8px 5px;
+    transition: all .15s;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: $btnRegisterBG;
+    }
+
+    & + & {
+        border-top: 1px solid rgba($primary, .1);
+    }
+}
+
+.selectItemActive {
+    color: $secondary;
+    font-weight: 600;
+
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: $secondary;
+        margin-left: 10px;
+    }
+}
+
+.selectItemRight {
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.btnSwith{
+    height: 34px !important;
+}

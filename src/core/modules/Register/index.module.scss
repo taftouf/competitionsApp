@@ -1,0 +1,54 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.registerForm {
+    @include authForm;
+}
+
+.registerFormTitle {
+    font-size: 19px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.registerFormBtn {
+    @include btn;
+    margin-top: 15px;
+}
+
+.registerForgotWrap {
+    text-align: right;
+    margin: 10px 0 30px;
+}
+
+.registerForgot {
+    color: $forgotPass;
+    text-decoration: underline;
+    font-size: 14px;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.registerGroup {
+    & + & {
+        margin-top: 25px;
+    }
+}
+
+.registerCheckbox {
+    margin-top: 20px;
+    display: flex;
+}
+
+.registerGeneralError {
+    color: $secondary;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.activeBtn{
+    pointer-events: none;
+}

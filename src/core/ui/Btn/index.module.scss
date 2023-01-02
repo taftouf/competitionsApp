@@ -1,0 +1,19 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.btn {
+    @include btn;
+
+    &:hover {
+        filter: brightness(.8);
+    }
+}
+
+.btnRed {
+    background-color: $secondary;
+}
+
+.btnDisabled {
+    pointer-events: none;
+    filter: brightness(.5);
+}

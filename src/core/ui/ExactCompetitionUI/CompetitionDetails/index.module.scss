@@ -1,0 +1,29 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.details {
+
+}
+
+.detailsItem {
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $divisionBG;
+    border-radius: 7px;
+
+    & + & {
+        margin-top: 10px;
+    }
+}
+
+.detailsResult {
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.detailsXP {
+    font-size: 14px;
+}

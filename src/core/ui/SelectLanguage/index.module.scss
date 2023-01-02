@@ -1,0 +1,11 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.btnSwich{
+    text-align: center;
+    gap: 0px;
+    width: 71px;
+    height: 18px;    
+    box-shadow: 0px 1.5px 5px rgba(0, 0, 0, 0.07);
+    border-radius: 7px;   
+}

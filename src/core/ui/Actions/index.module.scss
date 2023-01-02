@@ -1,0 +1,115 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.actions {
+    margin-right: -10px;
+    position: relative;
+
+    @media (max-width: 768px) {
+        position: static;
+        margin-bottom: -10px;
+        margin-right: -50px;
+        margin-left: -15px;
+        width: calc(100% + 65px);
+    }
+}
+
+.actionsBtn {
+    width: 40px;
+    height: 30px;
+    @include centerFlex;
+    cursor: pointer;
+
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: $primary;
+        transition: all .15s;
+    }
+
+    &:hover {
+        svg {
+            fill: $secondary;
+        }
+    }
+
+    @media (max-width: 768px) {
+        position: absolute;
+        top: 8px;
+        right: 5px;
+
+        svg {
+            width: 13px;
+            height: 13px;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.actionsContent {
+    min-width: 210px;
+    padding: 0 10px;
+    border-radius: 7px 0 7px 7px;
+    background-color: $btnBG;
+    box-shadow: $shadow;
+    position: absolute;
+    top: 100%;
+    right: -5px;
+    z-index: 3;
+
+    @media (max-width: 768px) {
+        min-width: unset;
+        width: 100%;
+        position: static;
+        border-radius: 0 0 7px 7px;
+        margin-top: 10px;
+    }
+}
+
+.actionsContentBtn {
+    display: flex;
+    align-items: center;
+    padding: 15px 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $primary;
+    cursor: pointer;
+    transition: all .15s;
+
+    svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 20px;
+        flex-shrink: 0;
+        fill: $primary;
+        transition: all .15s;
+    }
+
+    &:hover {
+        color: $secondary;
+
+        svg {
+            fill: $secondary;
+        }
+    }
+
+    & + & {
+        border-top: 1px solid $btnRegisterBG;
+    }
+}
+
+.actionsContentBtnDelete {
+    color: $secondary;
+
+    svg {
+        fill: $secondary;
+    }
+
+    &:hover {
+        color: $redDark;
+
+        svg {
+            fill: $redDark;
+        }
+    }
+}

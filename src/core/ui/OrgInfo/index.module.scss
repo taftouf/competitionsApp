@@ -1,0 +1,35 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.container {
+    width: 100%;
+}
+
+.org {
+    max-width: 1024px;
+    width: 100%;
+    background-color: $bg;
+    margin: 0 auto;
+}
+
+.orgLoaderWrapper {
+    @include centerFlex;
+    width: 100%;
+}
+
+.orgContent {
+    padding: 50px;
+    display: flex;
+
+    @media (max-width: 1024px) {
+        padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.orgContentTemplate {
+    padding: 15px;
+}

@@ -1,0 +1,172 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.members {
+    border-radius: 7px;
+    //overflow: hidden;
+    background-color: $blackLight;
+    width: 100%;
+}
+
+.membersTop {
+    padding: 18px 20px;
+    background-color: $blackLighter;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 7px 7px 0 0;
+}
+
+.membersFilterWrap {
+    padding: 0 70px;
+    margin-bottom: 30px;
+    text-align: right;
+
+    @media (max-width: 768px) {
+        padding: 0 25px;
+        text-align: center;
+    }
+}
+
+.membersContent {
+    padding: 0 70px 40px;
+
+    @media (max-width: 768px) {
+        padding: 0 25px 25px;
+    }
+}
+
+.membersRole {
+    & + & {
+        margin-top: 30px;
+    }
+}
+
+.membersContentTitle {
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.membersContentItem {
+    padding: 10px 15px;
+    background-color: $divisionBG;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 400;
+
+    & + & {
+        margin-top: 15px;
+    }
+}
+
+.membersContentItemWrap {
+    display: flex;
+    align-items: center;
+}
+
+.membersContentItemAdmin {
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        position: relative;
+        padding-right: 50px;
+    }
+}
+
+.membersContentItemImg {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.membersChange {
+
+}
+
+.membersChangeTop {
+    position: relative;
+    padding: 20px 70px;
+    text-align: center;
+    border-bottom: 1px solid $divisionBG;
+    margin-bottom: 30px;
+}
+
+.membersChangeClose {
+    @include closeBtn;
+    right: 30px;
+}
+
+.membersChangeTitle {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.membersChangeContent {
+    padding: 0 20px 30px;
+}
+
+.membersChangeCurrent {
+    font-size: 14px;
+    margin-bottom: 15px;
+
+    span {
+        font-weight: 600;
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+
+.membersChangeContentNew {
+    display: flex;
+    align-items: center;
+}
+
+.membersChangeContentSelect {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.membersChangeSubmit {
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-top: 30px;
+
+    & + & {
+        margin-left: 15px;
+    }
+}
+
+.membersChangeBtns {
+    display: flex;
+    align-items: center;
+
+    .membersChangeSubmit {
+        margin-top: 0;
+    }
+}
+
+.btns{
+    display: flex;
+    float: right;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+.btnsChn{
+    display: flex;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.pending{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: $primary;
+    font-weight: 500;
+    line-height: 1.3;
+}
